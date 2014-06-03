@@ -5,7 +5,7 @@ Ext.define('Volt.view.TabPanelMain', {
 
     ],
 
-    xtype: 'TabPanelMain',
+    xtype: 'tabPanelMain',
     config: {
         tabBar:{
             docked: 'bottom',
@@ -20,13 +20,8 @@ Ext.define('Volt.view.TabPanelMain', {
         },
         items:[
             { xtype: 'feedViewCard'},
-            
-            { 
-            	xtype: 'feedViewCard',
-            	html: 'NewView',
-            	title: 'NewView'
-            	
-            },
+
+
 
 
         ]

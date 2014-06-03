@@ -99,8 +99,8 @@ Ext.define(
 						 */
 						groups : {
 							'Group 1' : 1,
-							'Group 2' : 3,
-							'Group 3' : 2
+							'Group 2' : 2,
+							'Group 3' : 3	
 						},
 
 						/**
@@ -111,12 +111,23 @@ Ext.define(
 
 						items : [
 							     { 
-							    	 xtype: 'feedViewCard',
 							    	 title : 'Home Page',
 							    	 group : 'Group 1',
-							    	 slideButton : true
+							    	 slideButton : true,
+							    	 xtype: 'feedViewCard',
+							    	 html: 'New HTML'
+							    		 
+
 							    	 
 							     },
+							     { 
+						    	 title : 'Home Page 2',
+						    	 group : 'Group 1',
+						    	 slideButton : true,
+						    	 xtype: 'feedViewCard'
+
+						    	 
+						     },
 						         
 						
 //								{

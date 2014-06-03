@@ -74,7 +74,12 @@
         {
             "path": "resources/css/app.css",
             "update": "delta"
+        },
+        {
+            "path": "resources/css/volt.css",
+            "update": "delta"
         }
+
     ],
 
     /**

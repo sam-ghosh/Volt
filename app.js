@@ -17,14 +17,24 @@ Ext.application({
     name: 'Volt',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Volt.view.TabPanelMain'
     ],
 
+    models: [
+        'Feed'
+    ],
+    stores:[
+        'Feeds'
+    ],
     views: [
         'Main',
         'FeedView',
-        'TabPanelMain'
+        'TabPanelMain',
+        'FeedListView',
+        'FeedEditor'
     ],
+    controllers: ['FeedView'],
 
     icon: {
         '57': 'resources/icons/Icon.png',
@@ -49,7 +59,10 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('Volt.view.Main'));
+        
+        	
+        Ext.Viewport.add(Ext.create('Volt.view.TabPanelMain'));
+        //Ext.Viewport.add(Ext.create('Volt.view.FeedEditor'));
     },
 
     onUpdated: function() {
