@@ -12,6 +12,7 @@
         ],
 
         xtype: 'feedViewCard',
+        scrollable: 'vertical',
 
         config: {
             iconCls: 'home',
@@ -35,19 +36,38 @@
                             id: 'new_feed_button',
 
                             handler: function(button){
-                                console.log('button tapped inline handler, xtype =');
-                                this.fireEvent("newFeedCommand", this);
-                                debugger;
+                                //console.log('button tapped inline handler, xtype =');
+                                //debugger;
+                                button.up('feedViewCard').fireEvent("newFeedCommand", button.up('feedViewCard'));
+                                //learning : got this right - how to fire event from button so that its parent class handles it in controller
+
                             },
                             scope: this
                         }
                     ]
                 },
                 {
+                    // top panel with image and text of user
+                    xtype: 'container',
+                    flex: 1,
+
+                    items: [
+                        {
+                            //user's image
+                        },
+                        {
+                            //user's profile text
+                        }
+
+
+                    ]
+
+                },
+                {
                     xtype: 'list',
                     itemId: 'id_feedList',
                     store: 'Feeds',
-                    flex: 1,
+                    flex: 3,
                     loadingText : 'Loading Notes...',
                     emptyText : '<div class="notes-list-empty-text">No notes found.</div>',
                     onItemDisclosure: true,
@@ -55,9 +75,10 @@
 
                     listeners:{
                         itemtap: 'onFeedTap',
+
                         disclose: function(list,record,target,index,event,options){
                             console.log('Disclosed item = ',index);
-                            //this.fireEvent('editFeedCommand',this,record);
+                            this.fireEvent('editFeedCommand',this,record);
 
 
                         }
@@ -68,7 +89,7 @@
                     }
                 }
             ]
-        },
+        }
 
 
 
